@@ -1,0 +1,30 @@
+controller_list:
+  - name: fake_turn_table_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - joint_turn_table
+  - name: fake_robot_flo_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - joint_1_flo
+      - joint_2_flo
+      - joint_3_flo
+      - joint_4_flo
+      - joint_5_flo
+      - joint_6_flo
+  - name: fake_robot_simon_controller
+    type: $(arg fake_execution_type)
+    joints:
+      - joint_1_simon
+      - joint_2_simon
+      - joint_3_simon
+      - joint_4_simon
+      - joint_5_simon
+      - joint_6_simon
+initial:  # Define initial robot poses per group
+  - group: turn_table
+    pose: home
+  - group: robot_flo
+    pose: home
+  - group: robot_simon
+    pose: home

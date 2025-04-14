@@ -1,0 +1,90 @@
+controller_flo:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - joint_1_flo
+    - joint_2_flo
+    - joint_3_flo
+    - joint_4_flo
+    - joint_5_flo
+    - joint_6_flo
+  gains:
+    joint_1_flo:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_2_flo:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_3_flo:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_4_flo:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_5_flo:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_6_flo:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+controller_simon:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - joint_1_simon
+    - joint_2_simon
+    - joint_3_simon
+    - joint_4_simon
+    - joint_5_simon
+    - joint_6_simon
+  gains:
+    joint_1_simon:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_2_simon:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_3_simon:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_4_simon:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_5_simon:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+    joint_6_simon:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1
+controller_turn_table:
+  type: position_controllers/JointTrajectoryController
+  joints:
+    - joint_turn_table
+  gains:
+    joint_turn_table:
+      p: 100
+      d: 1
+      i: 1
+      i_clamp: 1

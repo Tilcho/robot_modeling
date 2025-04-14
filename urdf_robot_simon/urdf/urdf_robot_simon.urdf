@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="urdf_robot_simon">
+  <link
+    name="base_link_simon">
+    <inertial>
+      <origin
+        xyz="-0.021958 0.35096 0.047669"
+        rpy="0 0 0" />
+      <mass
+        value="8.5514" />
+      <inertia
+        ixx="0.5338"
+        ixy="-0.0037779"
+        ixz="-0.020192"
+        iyy="0.098331"
+        iyz="-0.093769"
+        izz="0.50259" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/base_link_simon.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/base_link_simon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="link_1_simon">
+    <inertial>
+      <origin
+        xyz="0.021958 0.047669 0.26796"
+        rpy="0 0 0" />
+      <mass
+        value="8.5514" />
+      <inertia
+        ixx="0.5338"
+        ixy="0.020192"
+        ixz="0.0037779"
+        iyy="0.50259"
+        iyz="-0.093769"
+        izz="0.098331" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 3.1416" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_1_simon.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_1_simon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_1_simon"
+    type="revolute">
+    <origin
+      xyz="0 0 0.083"
+      rpy="0 0 1.5708" />
+    <parent
+      link="base_link_simon" />
+    <child
+      link="link_1_simon" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_2_simon">
+    <inertial>
+      <origin
+        xyz="0.11796 -0.047669 -0.026042"
+        rpy="0 0 0" />
+      <mass
+        value="8.5514" />
+      <inertia
+        ixx="0.098331"
+        ixy="0.093769"
+        ixz="0.0037779"
+        iyy="0.50259"
+        iyz="-0.020192"
+        izz="0.5338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_2_simon.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_2_simon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_2_simon"
+    type="revolute">
+    <origin
+      xyz="-0.048 0 0.15"
+      rpy="0 -1.5708 0" />
+    <parent
+      link="link_1_simon" />
+    <child
+      link="link_2_simon" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_3_simon">
+    <inertial>
+      <origin
+        xyz="0.096042 -0.047669 0.069965"
+        rpy="0 0 0" />
+      <mass
+        value="8.5514" />
+      <inertia
+        ixx="0.5338"
+        ixy="0.020192"
+        ixz="-0.0037779"
+        iyy="0.50259"
+        iyz="0.093769"
+        izz="0.098331" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_3_simon.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_3_simon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_3_simon"
+    type="revolute">
+    <origin
+      xyz="0.048 0 0.07"
+      rpy="0 1.5708 0" />
+    <parent
+      link="link_2_simon" />
+    <child
+      link="link_3_simon" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_4_simon">
+    <inertial>
+      <origin
+        xyz="0.047669 0.23004 0.050042"
+        rpy="0 0 0" />
+      <mass
+        value="8.5514" />
+      <inertia
+        ixx="0.50259"
+        ixy="0.093769"
+        ixz="-0.020192"
+        iyy="0.098331"
+        iyz="0.0037779"
+        izz="0.5338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_4_simon.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_4_simon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_4_simon"
+    type="revolute">
+    <origin
+      xyz="0.046 0 0.3"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="link_3_simon" />
+    <child
+      link="link_4_simon" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_5_simon">
+    <inertial>
+      <origin
+        xyz="-0.029958 -0.23004 0.0016686"
+        rpy="0 0 0" />
+      <mass
+        value="8.5514" />
+      <inertia
+        ixx="0.5338"
+        ixy="-0.0037779"
+        ixz="-0.020192"
+        iyy="0.098331"
+        iyz="-0.093769"
+        izz="0.50259" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_5_simon.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_5_simon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_5_simon"
+    type="revolute">
+    <origin
+      xyz="0.046 0 0.08"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="link_4_simon" />
+    <child
+      link="link_5_simon" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="0"
+      velocity="0" />
+  </joint>
+  <link
+    name="link_6_simon">
+    <inertial>
+      <origin
+        xyz="-0.19833 -0.23004 0.075958"
+        rpy="0 0 0" />
+      <mass
+        value="8.5514" />
+      <inertia
+        ixx="0.50259"
+        ixy="-0.093769"
+        ixz="0.020192"
+        iyy="0.098331"
+        iyz="0.0037779"
+        izz="0.5338" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="3.1416 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_6_simon.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://urdf_robot_simon/meshes/link_6_simon.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="joint_6_simon"
+    type="revolute">
+    <origin
+      xyz="0.046 0 0.2"
+      rpy="3.1416 -1.5708 0" />
+    <parent
+      link="link_5_simon" />
+    <child
+      link="link_6_simon" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-3.1416"
+      upper="3.1416"
+      effort="0"
+      velocity="0" />
+  </joint>
+</robot>

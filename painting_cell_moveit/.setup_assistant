@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: urdf_painting_cell
+    relative_path: urdf/urdf_painting_cell.urdf
+    xacro_args: ""
+  SRDF:
+    relative_path: config/urdf_painting_cell.srdf
+  CONFIG:
+    author_name: SimonKulovits FlorianFaber
+    author_email: re24m012@technikum-wien.at
+    generated_timestamp: 1744199397

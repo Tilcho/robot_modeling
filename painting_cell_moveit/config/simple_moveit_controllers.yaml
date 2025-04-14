@@ -1,0 +1,29 @@
+controller_list:
+  - name: controller_flo
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - joint_1_flo
+      - joint_2_flo
+      - joint_3_flo
+      - joint_4_flo
+      - joint_5_flo
+      - joint_6_flo
+  - name: controller_simon
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - joint_1_simon
+      - joint_2_simon
+      - joint_3_simon
+      - joint_4_simon
+      - joint_5_simon
+      - joint_6_simon
+  - name: controller_turn_table
+    action_ns: follow_joint_trajectory
+    type: FollowJointTrajectory
+    default: True
+    joints:
+      - joint_turn_table

@@ -1,0 +1,1 @@
+controller_joint_names: ['', 'joint_turn_table', 'joint_1_flo', 'joint_2_flo', 'joint_3_flo', 'joint_4_flo', 'joint_5_flo', 'joint_6_flo', 'joint_1_simon', 'joint_2_simon', 'joint_3_simon', 'joint_4_simon', 'joint_5_simon', 'joint_6_simon', ]
