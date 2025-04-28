@@ -610,9 +610,9 @@
     </transmission>
     <!-- Gazebo Plugins -->
     <gazebo>
-        <plugin name="control" filename="libgazebo_ros_control.so" />
-        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/</robotNamespace>
+        <plugin name="control" filename="libgazebo_ros_control.so">
+    <!--<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/</robotNamespace>-->
         </plugin>
     </gazebo>
     <gazebo>
