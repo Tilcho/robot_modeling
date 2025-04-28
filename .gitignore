@@ -1,5 +1,5 @@
 # Ignore all log files
 *.log
 # Ignore STL file of painintg cell - 200MB 
-urdf_painting_cell/meshes/painting_cell.STL
-painting_cell/meshes/cell.STL
+#urdf_painting_cell/meshes/painting_cell.STL
+#painting_cell/meshes/cell.STL
