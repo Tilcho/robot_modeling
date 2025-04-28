@@ -1,0 +1,619 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot name="painting_cell">
+    <link name="world">
+    </link>
+    <joint name="fixed_link_to_world" type="fixed">
+        <parent link="world"/>
+        <child link="a_foundation"/>
+    </joint>
+    <!-- foundation link to enable inertial simulation with painting cell -->
+    <link name="a_foundation" />
+    <joint name="foundation" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 1.5708" />
+        <parent link="a_foundation" />
+        <child link="painting_cell" />
+    </joint>
+    <link name="painting_cell">
+        <inertial>
+            <origin xyz="-0.09426 0.68069 0.074345" rpy="0 0 0" />
+            <mass value="975.23" />
+            <inertia ixx="78.759" ixy="-0.0036806" ixz="0.50295" iyy="150.76" iyz="0.0008935" izz="93.846" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/cell.stl" />
+            </geometry>
+            <material name="">
+                <color rgba="1 1 1 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/cell.stl" />
+            </geometry>
+        </collision>
+    </link>
+    <!-- turn_table -->
+    <link name="turn_table">
+        <inertial>
+            <origin xyz="-1.3988E-06 0.0055716 -9.2944E-07" rpy="0 0 0" />
+            <mass value="112.96" />
+            <inertia ixx="11.799" ixy="1.7838E-10" ixz="1.9748E-05" iyy="23.592" iyz="1.1853E-10" izz="11.799" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/turn_table.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="1 1 0.75294 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/turn_table.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_turn_table" type="revolute">
+        <origin xyz="0 -0.01 0.97538" rpy="1.5708 0 0" />
+        <parent link="painting_cell" />
+        <child link="turn_table" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="3.1416" />
+    </joint>
+    <!-- robot_simon -->
+    <link name="base_link_simon">
+        <inertial>
+            <origin xyz="-0.021958 0.35096 0.047669" rpy="0 0 0" />
+            <mass value="8.5514" />
+            <inertia ixx="0.5338" ixy="-0.0037779" ixz="-0.020192" iyy="0.098331" iyz="-0.093769" izz="0.50259" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/base_link_simon.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/base_link_simon.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_0_simon" type="fixed">
+        <origin xyz="0.7 0.49 0.85038" rpy="0 0 3.9270" />
+        <parent link="painting_cell" />
+        <child link="base_link_simon" />
+        <axis xyz="0 0 0" />
+        <limit lower="0" upper="0" effort="0" velocity="0" />
+    </joint>
+    <link name="link_1_simon">
+        <inertial>
+            <origin xyz="0.021958 0.047669 0.26796" rpy="0 0 0" />
+            <mass value="8.5514" />
+            <inertia ixx="0.5338" ixy="0.020192" ixz="0.0037779" iyy="0.50259" iyz="-0.093769" izz="0.098331" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 3.1416" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_1_simon.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_1_simon.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_1_simon" type="revolute">
+        <origin xyz="0 0 0.083" rpy="0 0 1.5708" />
+        <parent link="base_link_simon" />
+        <child link="link_1_simon" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_2_simon">
+        <inertial>
+            <origin xyz="0.11796 -0.047669 -0.026042" rpy="0 0 0" />
+            <mass value="8.5514" />
+            <inertia ixx="0.098331" ixy="0.093769" ixz="0.0037779" iyy="0.50259" iyz="-0.020192" izz="0.5338" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_2_simon.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_2_simon.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_2_simon" type="revolute">
+        <origin xyz="-0.048 0 0.15" rpy="0 -1.5708 0" />
+        <parent link="link_1_simon" />
+        <child link="link_2_simon" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_3_simon">
+        <inertial>
+            <origin xyz="0.096042 -0.047669 0.069965" rpy="0 0 0" />
+            <mass value="8.5514" />
+            <inertia ixx="0.5338" ixy="0.020192" ixz="-0.0037779" iyy="0.50259" iyz="0.093769" izz="0.098331" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_3_simon.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_3_simon.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_3_simon" type="revolute">
+        <origin xyz="0.048 0 0.07" rpy="0 1.5708 0" />
+        <parent link="link_2_simon" />
+        <child link="link_3_simon" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_4_simon">
+        <inertial>
+            <origin xyz="0.047669 0.23004 0.050042" rpy="0 0 0" />
+            <mass value="8.5514" />
+            <inertia ixx="0.50259" ixy="0.093769" ixz="-0.020192" iyy="0.098331" iyz="0.0037779" izz="0.5338" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_4_simon.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_4_simon.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_4_simon" type="revolute">
+        <origin xyz="0.046 0 0.3" rpy="-1.5708 0 -1.5708" />
+        <parent link="link_3_simon" />
+        <child link="link_4_simon" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_5_simon">
+        <inertial>
+            <origin xyz="-0.029958 -0.23004 0.0016686" rpy="0 0 0" />
+            <mass value="8.5514" />
+            <inertia ixx="0.5338" ixy="-0.0037779" ixz="-0.020192" iyy="0.098331" iyz="-0.093769" izz="0.50259" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_5_simon.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_5_simon.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_5_simon" type="revolute">
+        <origin xyz="0.046 0 0.08" rpy="3.1416 -1.5708 0" />
+        <parent link="link_4_simon" />
+        <child link="link_5_simon" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_6_simon">
+        <inertial>
+            <origin xyz="-0.19833 -0.23004 0.075958" rpy="0 0 0" />
+            <mass value="8.5514" />
+            <inertia ixx="0.50259" ixy="-0.093769" ixz="0.020192" iyy="0.098331" iyz="0.0037779" izz="0.5338" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="3.1416 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_6_simon.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_6_simon.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_6_simon" type="revolute">
+        <origin xyz="0.046 0 0.2" rpy="3.1416 -1.5708 0" />
+        <parent link="link_5_simon" />
+        <child link="link_6_simon" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <!-- robot_florian -->
+    <link name="base_link_flo">
+        <inertial>
+            <origin xyz="-6.2303E-07 1.2798E-06 0.072226" rpy="0 0 0" />
+            <mass value="1.859" />
+            <inertia ixx="0.011059" ixy="-1.2298E-07" ixz="-1.0999E-07" iyy="0.011058" iyz="1.8675E-07" izz="0.01313" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/base_link_flo.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/base_link_flo.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_0_flo" type="fixed">
+        <origin xyz="-0.7 0.49 0.85038" rpy="0 0 -0.7854" />
+        <parent link="painting_cell" />
+        <child link="base_link_flo" />
+        <axis xyz="0 0 0" />
+    </joint>
+    <link name="link_1_flo">
+        <inertial>
+            <origin xyz="1.4271E-08 -0.057735 -0.017263" rpy="0 0 0" />
+            <mass value="0.32309" />
+            <inertia ixx="0.00049732" ixy="6.7918E-11" ixz="-9.2494E-11" iyy="0.00037976" iyz="-4.0695E-05" izz="0.0004415" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_1_flo.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_1_flo.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_1_flo" type="revolute">
+        <origin xyz="0 0 0.15" rpy="-1.9468 0 3.1416" />
+        <parent link="base_link_flo" />
+        <child link="link_1_flo" />
+        <axis xyz="0 0.93012 0.36725" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_2_flo">
+        <inertial>
+            <origin xyz="1.0793E-08 0.052069 -0.14998" rpy="0 0 0" />
+            <mass value="1.576" />
+            <inertia ixx="0.017927" ixy="1.3734E-09" ixz="1.19E-09" iyy="0.017703" iyz="1.5043E-06" izz="0.0014816" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_2_flo.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_2_flo.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_2_flo" type="revolute">
+        <origin xyz="0 -0.07103 0.030818" rpy="1.1947 0 3.1416" />
+        <parent link="link_1_flo" />
+        <child link="link_2_flo" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_3_flo">
+        <inertial>
+            <origin xyz="5.2044E-09 -0.058895 0.014691" rpy="0 0 0" />
+            <mass value="0.41135" />
+            <inertia ixx="0.00069097" ixy="6.2254E-11" ixz="2.363E-13" iyy="0.00055184" iyz="-2.4759E-05" izz="0.00052635" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_3_flo.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_3_flo.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_3_flo" type="revolute">
+        <origin xyz="0 0 -0.3" rpy="0 1.5708 0" />
+        <parent link="link_2_flo" />
+        <child link="link_3_flo" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_4_flo">
+        <inertial>
+            <origin xyz="1.1592E-06 -0.057903 0.029233" rpy="0 0 0" />
+            <mass value="0.54355" />
+            <inertia ixx="0.0011348" ixy="6.5647E-11" ixz="5.5232E-11" iyy="0.00099434" iyz="-4.9821E-05" izz="0.00062037" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_4_flo.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_4_flo.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_4_flo" type="revolute">
+        <origin xyz="0 -0.05475 0.075" rpy="-1.5708 0 1.5708" />
+        <parent link="link_3_flo" />
+        <child link="link_4_flo" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_5_flo">
+        <inertial>
+            <origin xyz="-1.2442E-06 -0.054708 0.01555" rpy="0 0 0" />
+            <mass value="0.38783" />
+            <inertia ixx="0.00063618" ixy="6.286E-11" ixz="2.3496E-11" iyy="0.00052928" iyz="-3.1119E-05" izz="0.00047736" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_5_flo.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_5_flo.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_5_flo" type="revolute">
+        <origin xyz="0 -0.054749 0.105" rpy="-1.5708 0 -3.1416" />
+        <parent link="link_4_flo" />
+        <child link="link_5_flo" />
+        <axis xyz="0 1 0" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <link name="link_6_flo">
+        <inertial>
+            <origin xyz="1.5167E-05 4.219E-05 0.028173" rpy="0 0 0" />
+            <mass value="0.2641" />
+            <inertia ixx="0.00038852" ixy="-3.0807E-07" ixz="5.6453E-08" iyy="0.00039016" iyz="-1.4393E-07" izz="0.00071229" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_6_flo.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.79216 0.81961 0.93333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/link_6_flo.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_6_flo" type="revolute">
+        <origin xyz="0 -0.049499 0.075" rpy="0 0 0" />
+        <parent link="link_5_flo" />
+        <child link="link_6_flo" />
+        <axis xyz="0 0 1" />
+        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+    </joint>
+    <transmission name="joint_1_simon_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_1_simon">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint1_simon_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    <!-- transmissions-->
+    </transmission>
+    <transmission name="joint_2_simon_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_2_simon">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint2_simon_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_3_simon_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_3_simon">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint3_simon_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_4_simon_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_4_simon">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint4_simon_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_5_simon_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_5_simon">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint5_simon_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_6_simon_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_6_simon">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint6_simon_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_1_flo_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_1_flo">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint1_flo_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_2_flo_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_2_flo">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint2_flo_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_3_flo_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_3_flo">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint3_flo_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_4_flo_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_4_flo">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint4_flo_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_5_flo_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_5_flo">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint5_flo_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="joint_6_flo_trans">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_6_flo">
+            <hardwareInterface>EffortJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint6_flo_motor">
+            <mechanicalReduction>1</mechanicalReduction>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </actuator>
+    </transmission>
+    <transmission name="trans_joint_turn_table">
+        <type>transmission_interface/SimpleTransmission</type>
+        <joint name="joint_turn_table">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+        </joint>
+        <actuator name="joint_turn_table_motor">
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
+            <mechanicalReduction>1</mechanicalReduction>
+        </actuator>
+    </transmission>
+    <!-- Gazebo Plugins -->
+    <gazebo>
+        <plugin name="control" filename="libgazebo_ros_control.so">
+        </plugin>
+    </gazebo>
+    <gazebo>
+        <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
+        <jointName>joint_turn_table, joint_0_flo, joint_1_flo, joint_2_flo, joint_3_flo, joint_4_flo, joint_5_flo, joint_6_flo, joint_6_flo, joint_0_simon, joint_1_simon, joint_2_simon, joint_3_simon, joint_4_simon, joint_5_simon, joint_6_simon</jointName>
+        </plugin>
+    </gazebo>
+</robot>

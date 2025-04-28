@@ -1,5 +1,5 @@
 controller_list:
-  - name: controller_flo
+  - name: robot_flo_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: True
@@ -10,7 +10,7 @@ controller_list:
       - joint_4_flo
       - joint_5_flo
       - joint_6_flo
-  - name: controller_simon
+  - name: robot_simon_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: True
@@ -21,7 +21,7 @@ controller_list:
       - joint_4_simon
       - joint_5_simon
       - joint_6_simon
-  - name: controller_turn_table
+  - name: turn_table_controller
     action_ns: follow_joint_trajectory
     type: FollowJointTrajectory
     default: True

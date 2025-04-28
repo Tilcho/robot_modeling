@@ -9,62 +9,62 @@ default_acceleration_scaling_factor: 0.1
 # Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
 joint_limits:
   joint_1_flo:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 3.1416
     has_acceleration_limits: false
     max_acceleration: 0
   joint_1_simon:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 3.1416
     has_acceleration_limits: false
     max_acceleration: 0
   joint_2_flo:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 3.1416
     has_acceleration_limits: false
     max_acceleration: 0
   joint_2_simon:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 3.1416
     has_acceleration_limits: false
     max_acceleration: 0
   joint_3_flo:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 3.1416
     has_acceleration_limits: false
     max_acceleration: 0
   joint_3_simon:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 3.1416
     has_acceleration_limits: false
     max_acceleration: 0
   joint_4_flo:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 6.2832
     has_acceleration_limits: false
     max_acceleration: 0
   joint_4_simon:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 6.2832
     has_acceleration_limits: false
     max_acceleration: 0
   joint_5_flo:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 6.2832
     has_acceleration_limits: false
     max_acceleration: 0
   joint_5_simon:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 6.2832
     has_acceleration_limits: false
     max_acceleration: 0
   joint_6_flo:
-    has_velocity_limits: false
-    max_velocity: 0
+    has_velocity_limits: true
+    max_velocity: 6.2832
     has_acceleration_limits: false
     max_acceleration: 0
   joint_6_simon:
-    has_velocity_limits: false
+    has_velocity_limits: true
     max_velocity: 0
     has_acceleration_limits: false
     max_acceleration: 0

@@ -194,7 +194,7 @@ turn_table:
     - AITstar
     - ABITstar
     - BITstar
-robot_flo:
+robot_simon:
   default_planner_config: RRT
   planner_configs:
     - AnytimePathShortening
@@ -224,7 +224,7 @@ robot_flo:
     - AITstar
     - ABITstar
     - BITstar
-robot_simon:
+robot_flo:
   default_planner_config: RRT
   planner_configs:
     - AnytimePathShortening
