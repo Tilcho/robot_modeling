@@ -6,6 +6,6 @@
 
   <!-- Load the controllers -->
   <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-    output="screen" args="controller_flo controller_simon controller_turn_table "/>
+    output="screen" args="robot_flo_controller robot_simon_controller turn_table_controller "/>
 
 </launch>
