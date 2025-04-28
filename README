@@ -1,2 +1,3 @@
 after cloning the repository one must add painting_cell.STL into robot_modeling/urdf_painting_cell/meshes, as it is too big to be handled by git...
 same with cell.STL in the painting_cell folder
+https://cloud.technikum-wien.at/s/LYzEmfwfG4dt2MB
