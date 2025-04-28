@@ -8,4 +8,4 @@ moveit_setup_assistant_config:
   CONFIG:
     author_name: Simon Kulovits
     author_email: re24m012@technikum-wien.at
-    generated_timestamp: 1745829878
+    generated_timestamp: 1745856130
