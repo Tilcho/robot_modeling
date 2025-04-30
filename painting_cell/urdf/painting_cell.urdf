@@ -3,15 +3,14 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="painting_cell">
-    <!--
+<!--
     <link name="world">
     </link>
     <joint name="fixed_link_to_world" type="fixed">
-        <origin xyz="0 0 0" rpy="0 0 1.5708" />
         <parent link="world"/>
         <child link="a_foundation"/>
     </joint>
-    -->
+-->
     <!-- foundation link to enable inertial simulation with painting cell -->
     <link name="a_foundation" />
     <joint name="foundation" type="fixed">
@@ -69,7 +68,8 @@
         <parent link="painting_cell" />
         <child link="turn_table" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="3.1416" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <!-- robot_simon -->
     <link name="base_link_simon">
@@ -127,7 +127,8 @@
         <parent link="base_link_simon" />
         <child link="link_1_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_2_simon">
         <inertial>
@@ -156,7 +157,8 @@
         <parent link="link_1_simon" />
         <child link="link_2_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_3_simon">
         <inertial>
@@ -185,7 +187,8 @@
         <parent link="link_2_simon" />
         <child link="link_3_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_4_simon">
         <inertial>
@@ -214,7 +217,8 @@
         <parent link="link_3_simon" />
         <child link="link_4_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_5_simon">
         <inertial>
@@ -243,7 +247,8 @@
         <parent link="link_4_simon" />
         <child link="link_5_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_6_simon">
         <inertial>
@@ -272,7 +277,8 @@
         <parent link="link_5_simon" />
         <child link="link_6_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <!-- robot_florian -->
     <link name="base_link_flo">
@@ -330,7 +336,8 @@
         <parent link="base_link_flo" />
         <child link="link_1_flo" />
         <axis xyz="0 0.93012 0.36725" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_2_flo">
         <inertial>
@@ -359,7 +366,8 @@
         <parent link="link_1_flo" />
         <child link="link_2_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_3_flo">
         <inertial>
@@ -388,7 +396,8 @@
         <parent link="link_2_flo" />
         <child link="link_3_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_4_flo">
         <inertial>
@@ -417,7 +426,8 @@
         <parent link="link_3_flo" />
         <child link="link_4_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_5_flo">
         <inertial>
@@ -446,7 +456,8 @@
         <parent link="link_4_flo" />
         <child link="link_5_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_6_flo">
         <inertial>
@@ -475,7 +486,8 @@
         <parent link="link_5_flo" />
         <child link="link_6_flo" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
+        <dynamics damping="0.5" friction="0.5" />
     </joint>
     <!-- transmissions-->
     <transmission name="joint_1_simon_trans">
@@ -616,7 +628,7 @@
     <gazebo>
         <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
         <updateRate>100</updateRate>
-        <jointName>joint_turn_table, joint_1_flo, joint_2_flo, joint_3_flo, joint_4_flo, joint_5_flo, joint_6_flo, joint_6_flo, joint_1_simon, joint_2_simon, joint_3_simon, joint_4_simon, joint_5_simon, joint_6_simon</jointName>
+        <jointName>joint_turn_table, joint_1_flo, joint_2_flo, joint_3_flo, joint_4_flo, joint_5_flo, joint_6_flo, joint_1_simon, joint_2_simon, joint_3_simon, joint_4_simon, joint_5_simon, joint_6_simon</jointName>
         </plugin>
     </gazebo>
 </robot>
