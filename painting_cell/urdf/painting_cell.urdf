@@ -7,6 +7,7 @@
     <link name="world">
     </link>
     <joint name="fixed_link_to_world" type="fixed">
+        <origin xyz="0 0 0" rpy="0 0 1.5708" />
         <parent link="world"/>
         <child link="a_foundation"/>
     </joint>
@@ -14,7 +15,7 @@
     <!-- foundation link to enable inertial simulation with painting cell -->
     <link name="a_foundation" />
     <joint name="foundation" type="fixed">
-        <origin xyz="0 0 0" rpy="0 0 1.5708" />
+        <origin xyz="0 0 0" rpy="0 0 0" />
         <parent link="a_foundation" />
         <child link="painting_cell" />
     </joint>
@@ -68,7 +69,7 @@
         <parent link="painting_cell" />
         <child link="turn_table" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="3.1416" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="3.1416" />
     </joint>
     <!-- robot_simon -->
     <link name="base_link_simon">
@@ -98,7 +99,6 @@
         <parent link="painting_cell" />
         <child link="base_link_simon" />
         <axis xyz="0 0 0" />
-        <limit lower="0" upper="0" effort="0" velocity="0" />
     </joint>
     <link name="link_1_simon">
         <inertial>
@@ -127,7 +127,7 @@
         <parent link="base_link_simon" />
         <child link="link_1_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_2_simon">
         <inertial>
@@ -156,7 +156,7 @@
         <parent link="link_1_simon" />
         <child link="link_2_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_3_simon">
         <inertial>
@@ -185,7 +185,7 @@
         <parent link="link_2_simon" />
         <child link="link_3_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_4_simon">
         <inertial>
@@ -214,7 +214,7 @@
         <parent link="link_3_simon" />
         <child link="link_4_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_5_simon">
         <inertial>
@@ -243,7 +243,7 @@
         <parent link="link_4_simon" />
         <child link="link_5_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_6_simon">
         <inertial>
@@ -272,7 +272,7 @@
         <parent link="link_5_simon" />
         <child link="link_6_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <!-- robot_florian -->
     <link name="base_link_flo">
@@ -330,7 +330,7 @@
         <parent link="base_link_flo" />
         <child link="link_1_flo" />
         <axis xyz="0 0.93012 0.36725" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_2_flo">
         <inertial>
@@ -359,7 +359,7 @@
         <parent link="link_1_flo" />
         <child link="link_2_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_3_flo">
         <inertial>
@@ -388,7 +388,7 @@
         <parent link="link_2_flo" />
         <child link="link_3_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_4_flo">
         <inertial>
@@ -417,7 +417,7 @@
         <parent link="link_3_flo" />
         <child link="link_4_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_5_flo">
         <inertial>
@@ -446,7 +446,7 @@
         <parent link="link_4_flo" />
         <child link="link_5_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
     <link name="link_6_flo">
         <inertial>
@@ -475,23 +475,23 @@
         <parent link="link_5_flo" />
         <child link="link_6_flo" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
+        <limit lower="-3.1416" upper="3.1416" effort="5" velocity="0" />
     </joint>
+    <!-- transmissions-->
     <transmission name="joint_1_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_1_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint1_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </actuator>
-    <!-- transmissions-->
     </transmission>
     <transmission name="joint_2_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_2_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint2_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -501,7 +501,7 @@
     <transmission name="joint_3_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_3_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint3_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -511,7 +511,7 @@
     <transmission name="joint_4_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_4_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint4_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -521,7 +521,7 @@
     <transmission name="joint_5_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_5_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint5_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -531,7 +531,7 @@
     <transmission name="joint_6_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_6_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint6_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -541,7 +541,7 @@
     <transmission name="joint_1_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_1_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint1_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -551,7 +551,7 @@
     <transmission name="joint_2_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_2_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint2_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -561,7 +561,7 @@
     <transmission name="joint_3_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_3_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint3_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -571,7 +571,7 @@
     <transmission name="joint_4_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_4_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint4_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -581,7 +581,7 @@
     <transmission name="joint_5_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_5_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint5_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -591,7 +591,7 @@
     <transmission name="joint_6_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_6_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint6_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -615,7 +615,8 @@
     </gazebo>
     <gazebo>
         <plugin name="joint_state_publisher" filename="libgazebo_ros_joint_state_publisher.so">
-        <jointName>joint_turn_table, joint_0_flo, joint_1_flo, joint_2_flo, joint_3_flo, joint_4_flo, joint_5_flo, joint_6_flo, joint_6_flo, joint_0_simon, joint_1_simon, joint_2_simon, joint_3_simon, joint_4_simon, joint_5_simon, joint_6_simon</jointName>
+        <updateRate>100</updateRate>
+        <jointName>joint_turn_table, joint_1_flo, joint_2_flo, joint_3_flo, joint_4_flo, joint_5_flo, joint_6_flo, joint_6_flo, joint_1_simon, joint_2_simon, joint_3_simon, joint_4_simon, joint_5_simon, joint_6_simon</jointName>
         </plugin>
     </gazebo>
 </robot>

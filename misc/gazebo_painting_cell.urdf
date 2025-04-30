@@ -477,21 +477,21 @@
         <axis xyz="0 0 1" />
         <limit lower="-3.1416" upper="3.1416" effort="0" velocity="0" />
     </joint>
+    <!-- transmissions-->
     <transmission name="joint_1_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_1_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint1_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
             <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </actuator>
-        <!-- transmissions-->
     </transmission>
     <transmission name="joint_2_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_2_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint2_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -501,7 +501,7 @@
     <transmission name="joint_3_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_3_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint3_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -511,7 +511,7 @@
     <transmission name="joint_4_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_4_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint4_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -521,7 +521,7 @@
     <transmission name="joint_5_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_5_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint5_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -531,7 +531,7 @@
     <transmission name="joint_6_simon_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_6_simon">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint6_simon_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -541,7 +541,7 @@
     <transmission name="joint_1_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_1_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint1_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -551,7 +551,7 @@
     <transmission name="joint_2_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_2_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint2_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -561,7 +561,7 @@
     <transmission name="joint_3_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_3_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint3_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -571,7 +571,7 @@
     <transmission name="joint_4_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_4_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint4_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -581,7 +581,7 @@
     <transmission name="joint_5_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_5_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint5_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -591,7 +591,7 @@
     <transmission name="joint_6_flo_trans">
         <type>transmission_interface/SimpleTransmission</type>
         <joint name="joint_6_flo">
-            <hardwareInterface>EffortJointInterface</hardwareInterface>
+            <hardwareInterface>hardware_interface/PositionJointInterface</hardwareInterface>
         </joint>
         <actuator name="joint6_flo_motor">
             <mechanicalReduction>1</mechanicalReduction>
@@ -611,8 +611,6 @@
     <!-- Gazebo Plugins -->
     <gazebo>
         <plugin name="control" filename="libgazebo_ros_control.so">
-    <!--<plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/</robotNamespace>-->
         </plugin>
     </gazebo>
     <gazebo>
