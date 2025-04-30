@@ -9,35 +9,56 @@ robot_flo_controller:
     - joint_6_flo
   gains:
     joint_1_flo:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_2_flo:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_3_flo:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_4_flo:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_5_flo:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_6_flo:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
+  constraints:
+    goal_time: 0.1
+    stopped_velocity_tolerance: 0.1
+    joint_1_flo:
+      goal: 0.1
+      trajectory: 0.05
+    joint_2_flo:
+      goal: 0.1
+      trajectory: 0.05
+    joint_3_flo:
+      goal: 0.1
+      trajectory: 0.05
+    joint_4_flo:
+      goal: 0.1
+      trajectory: 0.05
+    joint_5_flo:
+      goal: 0.1
+      trajectory: 0.05
+    joint_6_flo:
+      goal: 0.1
+      trajectory: 0.05
 robot_simon_controller:
   type: position_controllers/JointTrajectoryController
   joints:
@@ -49,32 +70,32 @@ robot_simon_controller:
     - joint_6_simon
   gains:
     joint_1_simon:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_2_simon:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_3_simon:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_4_simon:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_5_simon:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
     joint_6_simon:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
@@ -84,7 +105,7 @@ turn_table_controller:
     - joint_turn_table
   gains:
     joint_turn_table:
-      p: 100
+      p: 10
       d: 1
       i: 1
       i_clamp: 1
