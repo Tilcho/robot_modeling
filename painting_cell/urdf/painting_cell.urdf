@@ -3,14 +3,12 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="painting_cell">
-
     <link name="world">
     </link>
     <joint name="fixed_link_to_world" type="fixed">
         <parent link="world"/>
         <child link="a_foundation"/>
     </joint>
-
     <!-- foundation link to enable inertial simulation with painting cell -->
     <link name="a_foundation" />
     <joint name="foundation" type="fixed">
@@ -128,6 +126,7 @@
       effort="0"
       velocity="0" />
   </joint>
+  <!--
   <link name="knight_2">
     <inertial>
       <origin
@@ -229,6 +228,7 @@
     <axis
       xyz="0 0 0" />
   </joint>
+  -->
     <!-- robot_simon -->
     <link name="base_link_simon">
         <inertial>
