@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import rospy
 from std_msgs.msg import String, Float64MultiArray
 from moveit_commander import MoveGroupCommander, roscpp_initialize, roscpp_shutdown
@@ -33,17 +33,32 @@ def handle_joystick_command(msg):
 
         elif target_type == "tcp":
             pose = group.get_current_pose().pose
-            if move_target == "x":
-                pose.position.x += delta
-            elif move_target == "y":
-                pose.position.y += delta
-            elif move_target == "z":
-                pose.position.z += delta
+
+            # Positionsänderung
+            if move_target in ["x", "y", "z"]:
+                if move_target == "x":
+                    pose.position.x += delta
+                elif move_target == "y":
+                    pose.position.y += delta
+                elif move_target == "z":
+                    pose.position.z += delta
             else:
                 rospy.logwarn("Ungültige TCP-Achse")
                 return
+
+            # Bewegung planen und ausführen
+            group.set_start_state_to_current_state()
             group.set_pose_target(pose)
-            group.go(wait=True)
+
+            plan = group.plan()
+            success = group.execute(plan, wait=True)
+            group.stop()
+            group.clear_pose_targets()
+
+            if success:
+                rospy.loginfo(f"TCP-Bewegung {move_target} {direction} erfolgreich")
+            else:
+                rospy.logwarn(f"TCP-Bewegung {move_target} {direction} fehlgeschlagen")
 
     except Exception as e:
         rospy.logerr(f"Joystick-Fehler: {e}")
@@ -61,8 +76,8 @@ if __name__ == "__main__":
     rospy.init_node("hmi_bridge", anonymous=True)
 
     move_groups = {
-        "lackierer": MoveGroupCommander("move_group_1"),
-        "uv": MoveGroupCommander("move_group_2")
+        "lackierer": MoveGroupCommander("robot_simon"),
+        "uv": MoveGroupCommander("robot_flo")
     }
     for g in move_groups.values():
         g.set_max_velocity_scaling_factor(0.1)

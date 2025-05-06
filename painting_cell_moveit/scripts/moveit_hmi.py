@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from PyQt5 import QtWidgets, uic
 from PyQt5.QtCore import QTimer
 import subprocess
@@ -117,8 +118,8 @@ class TouchHMI(QtWidgets.QWidget):
         self.manualModeButton.setEnabled(True)
 
         if not self.is_process_running():
-            subprocess.Popen(["python3", "prozess.py"])
-            print("prozess.py gestartet")
+            subprocess.Popen(["python3", "paint.py"])
+            print("paint.py gestartet")
 
     def set_manual_mode(self):
         self.displayText.setText("Modus: Manuell aktiviert.")
@@ -137,9 +138,9 @@ class TouchHMI(QtWidgets.QWidget):
 
         for proc in psutil.process_iter(attrs=['pid', 'name', 'cmdline']):
             try:
-                if "prozess.py" in proc.info['cmdline']:
+                if "paint.py" in proc.info['cmdline']:
                     proc.terminate()
-                    print("prozess.py gestoppt")
+                    print("paint.py gestoppt")
             except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
                 continue
 
@@ -195,7 +196,7 @@ class TouchHMI(QtWidgets.QWidget):
             border-radius: 10px;
         """)
 
-    def is_process_running(self, name="prozess.py"):
+    def is_process_running(self, name="paint.py"):
         for proc in psutil.process_iter(attrs=['pid', 'name', 'cmdline']):
             try:
                 if name in proc.info['cmdline']:
