@@ -23,7 +23,6 @@ class MultiRobotDemo:
 
     def move_named_target(self, group, target_name):
         rospy.loginfo(f"Moving {group.get_name()} to {target_name}")
-        rospy.sleep(0.1)
         group.set_start_state_to_current_state()
         group.set_named_target(target_name)
         success = group.go(wait=True)

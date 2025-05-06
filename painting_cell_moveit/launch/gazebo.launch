@@ -18,6 +18,9 @@
   <!-- Unpause the simulation after loading the robot model -->
   <arg name="unpause" value="$(eval '' if arg('paused') else '-unpause')" />
 
+  <!-- Set the Physics calculation in Gazebo
+  <node name="set_physics" pkg="painting_cell_moveit" type="set_physics.py" output="screen" />
+  -->
   <!-- Spawn the robot in Gazebo -->
   <node name="spawn_gazebo_model" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model robot $(arg unpause) $(arg world_pose) $(arg initial_joint_positions)"
     respawn="false" output="screen" />
