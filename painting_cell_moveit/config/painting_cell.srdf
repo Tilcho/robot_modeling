@@ -97,36 +97,28 @@
         <joint name="joint_6_simon" value="0.995"/>
     </group_state>
     <group_state name="paint_1" group="robot_simon">
-        <joint name="joint_1_simon" value="-2.234"/>
-        <joint name="joint_2_simon" value="0.908"/>
-        <joint name="joint_3_simon" value="0.0"/>
-        <joint name="joint_4_simon" value="2.548"/>
-        <joint name="joint_5_simon" value="-0.192"/>
-        <joint name="joint_6_simon" value="-1.606"/>
+        <joint name="joint_1_simon" value="-1.239"/>
+        <joint name="joint_2_simon" value="-0.768"/>
+        <joint name="joint_3_simon" value="0.2443"/>
+        <joint name="joint_4_simon" value="1.0647"/>
+        <joint name="joint_5_simon" value="0.5934"/>
+        <joint name="joint_6_simon" value="1.2915"/>
     </group_state>
     <group_state name="paint_2" group="robot_simon">
-        <joint name="joint_1_simon" value="-2.513"/>
-        <joint name="joint_2_simon" value="0.28"/>
-        <joint name="joint_3_simon" value="0.37"/>
-        <joint name="joint_4_simon" value="2.51"/>
-        <joint name="joint_5_simon" value="-0.2"/>
-        <joint name="joint_6_simon" value="-1.833"/>
+        <joint name="joint_1_simon" value="-0.436"/>
+        <joint name="joint_2_simon" value="-0.942"/>
+        <joint name="joint_3_simon" value="0.2094"/>
+        <joint name="joint_4_simon" value="-0.035"/>
+        <joint name="joint_5_simon" value="-0.279"/>
+        <joint name="joint_6_simon" value="2.2515"/>
     </group_state>
     <group_state name="paint_3" group="robot_simon">
-        <joint name="joint_1_simon" value="-1.414"/>
-        <joint name="joint_2_simon" value="-1.449"/>
-        <joint name="joint_3_simon" value="0.698"/>
-        <joint name="joint_4_simon" value="0.925"/>
-        <joint name="joint_5_simon" value="0.82"/>
-        <joint name="joint_6_simon" value="0.384"/>
-    </group_state>
-    <group_state name="paint_4" group="robot_simon">
-        <joint name="joint_1_simon" value="-1.03"/>
-        <joint name="joint_2_simon" value="-0.454"/>
-        <joint name="joint_3_simon" value="0.0"/>
-        <joint name="joint_4_simon" value="1.047"/>
-        <joint name="joint_5_simon" value="0.838"/>
-        <joint name="joint_6_simon" value="1.466"/>
+        <joint name="joint_1_simon" value="-0.035"/>
+        <joint name="joint_2_simon" value="-1.466"/>
+        <joint name="joint_3_simon" value="1.0297"/>
+        <joint name="joint_4_simon" value="-0.209"/>
+        <joint name="joint_5_simon" value="-1.361"/>
+        <joint name="joint_6_simon" value="2.6704"/>
     </group_state>
     <group_state name="home" group="turn_table">
         <joint name="joint_turn_table" value="0"/>

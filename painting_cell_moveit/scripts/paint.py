@@ -13,6 +13,8 @@ class MultiRobotDemo:
         self.robot_simon = moveit_commander.MoveGroupCommander("robot_simon")
         self.robot_flo = moveit_commander.MoveGroupCommander("robot_flo")
         self.turn_table = moveit_commander.MoveGroupCommander("turn_table")
+        self.move_group = moveit_commander.MoveGroupCommander("robot_simon")
+        self.move_group.set_goal_tolerance(0.1)
 
         for group in [self.robot_simon, self.robot_flo, self.turn_table]:
             group.set_max_acceleration_scaling_factor(1.0)
@@ -34,15 +36,41 @@ class MultiRobotDemo:
     def run_sequence(self):
         # All robots to home position before any operation
         self.move_named_target(self.turn_table, "home")
-#        self.move_named_target(self.robot_simon, "home")
+        self.move_named_target(self.robot_simon, "home")
         self.move_named_target(self.robot_flo, "home")
 
         # Turntable to station_1
         self.move_named_target(self.turn_table, "station_1")
 
         # robot_simon executes paint sequence
-#        for i in range(1, 5):
-#            self.move_named_target(self.robot_simon, f"paint_{i}")
+        if False:
+            for i in range(1, 4):
+                self.move_named_target(self.robot_simon, f"paint_{i}")
+
+                # Get current joint values
+                joints = self.robot_simon.get_current_joint_values()
+                original_joint6 = joints[5]  # Save initial joint 6 position
+
+                # Swivel joint_6 +π/4
+                joints[5] = original_joint6 + math.pi / 4
+                self.robot_simon.set_joint_value_target(joints)
+                self.robot_simon.go(wait=True)
+                self.robot_simon.stop()
+                self.robot_simon.clear_pose_targets()
+
+                # Swivel joint_6 −π/4
+                joints[5] = original_joint6 - math.pi / 4
+                self.robot_simon.set_joint_value_target(joints)
+                self.robot_simon.go(wait=True)
+                self.robot_simon.stop()
+                self.robot_simon.clear_pose_targets()
+
+                # Return to original
+                joints[5] = original_joint6
+                self.robot_simon.set_joint_value_target(joints)
+                self.robot_simon.go(wait=True)
+                self.robot_simon.stop()
+                self.robot_simon.clear_pose_targets()
 
         # Turntable to station_2
         self.move_named_target(self.turn_table, "station_2")
