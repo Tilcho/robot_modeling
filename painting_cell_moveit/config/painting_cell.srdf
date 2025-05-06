@@ -88,6 +88,7 @@
         <joint name="joint_5_flo" value="-2.042"/>
         <joint name="joint_6_flo" value="-1.361"/>
     </group_state>
+    <!-- robot_simon -->
     <group_state name="home" group="robot_simon">
         <joint name="joint_1_simon" value="-0.995"/>
         <joint name="joint_2_simon" value="-0.576"/>
@@ -96,6 +97,7 @@
         <joint name="joint_5_simon" value="-0.489"/>
         <joint name="joint_6_simon" value="0.995"/>
     </group_state>
+    <!-- Pose 1 -->
     <group_state name="paint_1" group="robot_simon">
         <joint name="joint_1_simon" value="-1.239"/>
         <joint name="joint_2_simon" value="-0.768"/>
@@ -105,6 +107,23 @@
         <joint name="joint_6_simon" value="1.2915"/>
     </group_state>
     <group_state name="paint_2" group="robot_simon">
+        <joint name="joint_1_simon" value="-1.239"/>
+        <joint name="joint_2_simon" value="-0.768"/>
+        <joint name="joint_3_simon" value="0.2443"/>
+        <joint name="joint_4_simon" value="1.0647"/>
+        <joint name="joint_5_simon" value="0.5934"/>
+        <joint name="joint_6_simon" value="0.5061"/>
+    </group_state>
+    <group_state name="paint_3" group="robot_simon">
+        <joint name="joint_1_simon" value="-1.239"/>
+        <joint name="joint_2_simon" value="-0.768"/>
+        <joint name="joint_3_simon" value="0.2443"/>
+        <joint name="joint_4_simon" value="1.0647"/>
+        <joint name="joint_5_simon" value="0.5934"/>
+        <joint name="joint_6_simon" value="2.0769"/>
+    </group_state>
+    <!-- Pose 2 -->
+    <group_state name="paint_4" group="robot_simon">
         <joint name="joint_1_simon" value="-0.436"/>
         <joint name="joint_2_simon" value="-0.942"/>
         <joint name="joint_3_simon" value="0.2094"/>
@@ -112,13 +131,46 @@
         <joint name="joint_5_simon" value="-0.279"/>
         <joint name="joint_6_simon" value="2.2515"/>
     </group_state>
-    <group_state name="paint_3" group="robot_simon">
+    <group_state name="paint_5" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.436"/>
+        <joint name="joint_2_simon" value="-0.942"/>
+        <joint name="joint_3_simon" value="0.2094"/>
+        <joint name="joint_4_simon" value="-0.035"/>
+        <joint name="joint_5_simon" value="-0.279"/>
+        <joint name="joint_6_simon" value="1.4661"/>
+    </group_state>
+    <group_state name="paint_6" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.436"/>
+        <joint name="joint_2_simon" value="-0.942"/>
+        <joint name="joint_3_simon" value="0.2094"/>
+        <joint name="joint_4_simon" value="-0.035"/>
+        <joint name="joint_5_simon" value="-0.279"/>
+        <joint name="joint_6_simon" value="3.0369"/>
+    </group_state>
+    <!-- Pose 3 -->
+    <group_state name="paint_7" group="robot_simon">
         <joint name="joint_1_simon" value="-0.035"/>
         <joint name="joint_2_simon" value="-1.466"/>
         <joint name="joint_3_simon" value="1.0297"/>
         <joint name="joint_4_simon" value="-0.209"/>
         <joint name="joint_5_simon" value="-1.361"/>
         <joint name="joint_6_simon" value="2.6704"/>
+    </group_state>
+    <group_state name="paint_8" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.035"/>
+        <joint name="joint_2_simon" value="-1.466"/>
+        <joint name="joint_3_simon" value="1.0297"/>
+        <joint name="joint_4_simon" value="-0.209"/>
+        <joint name="joint_5_simon" value="-1.361"/>
+        <joint name="joint_6_simon" value="1.8850"/>
+    </group_state>
+    <group_state name="paint_9" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.035"/>
+        <joint name="joint_2_simon" value="-1.466"/>
+        <joint name="joint_3_simon" value="1.0297"/>
+        <joint name="joint_4_simon" value="-0.209"/>
+        <joint name="joint_5_simon" value="-1.361"/>
+        <joint name="joint_6_simon" value="3.4558"/>
     </group_state>
     <group_state name="home" group="turn_table">
         <joint name="joint_turn_table" value="0"/>

@@ -43,34 +43,9 @@ class MultiRobotDemo:
         self.move_named_target(self.turn_table, "station_1")
 
         # robot_simon executes paint sequence
-        if False:
-            for i in range(1, 4):
-                self.move_named_target(self.robot_simon, f"paint_{i}")
-
-                # Get current joint values
-                joints = self.robot_simon.get_current_joint_values()
-                original_joint6 = joints[5]  # Save initial joint 6 position
-
-                # Swivel joint_6 +π/4
-                joints[5] = original_joint6 + math.pi / 4
-                self.robot_simon.set_joint_value_target(joints)
-                self.robot_simon.go(wait=True)
-                self.robot_simon.stop()
-                self.robot_simon.clear_pose_targets()
-
-                # Swivel joint_6 −π/4
-                joints[5] = original_joint6 - math.pi / 4
-                self.robot_simon.set_joint_value_target(joints)
-                self.robot_simon.go(wait=True)
-                self.robot_simon.stop()
-                self.robot_simon.clear_pose_targets()
-
-                # Return to original
-                joints[5] = original_joint6
-                self.robot_simon.set_joint_value_target(joints)
-                self.robot_simon.go(wait=True)
-                self.robot_simon.stop()
-                self.robot_simon.clear_pose_targets()
+        for i in range(1, 10):
+            self.move_named_target(self.robot_simon, f"paint_{i}")
+        self.move_named_target(self.robot_simon, "home")
 
         # Turntable to station_2
         self.move_named_target(self.turn_table, "station_2")
