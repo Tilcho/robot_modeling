@@ -60,12 +60,12 @@
             </geometry>
         </collision>
     </link>
-    <joint name="joint_turn_table" type="revolute">
+    <joint name="joint_turn_table" type="continuous">
         <origin xyz="0 -0.01 0.97538" rpy="1.5708 0 0" />
         <parent link="painting_cell" />
         <child link="turn_table" />
         <axis xyz="0 1 0" />
-        <limit lower="-6.2833" upper="6.2833" effort="10" velocity="6.1832" />
+        <limit effort="10" velocity="6.1832" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <!-- sculptures to be painted -->

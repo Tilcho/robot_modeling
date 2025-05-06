@@ -34,18 +34,20 @@ class MultiRobotDemo:
             rospy.logwarn(f"Failed to reach target: {target_name}")
 
     def run_sequence(self):
+        doSimon = True
         # All robots to home position before any operation
         self.move_named_target(self.turn_table, "home")
-        self.move_named_target(self.robot_simon, "home")
+        if doSimon:
+            self.move_named_target(self.robot_simon, "home")
         self.move_named_target(self.robot_flo, "home")
 
         # Turntable to station_1
         self.move_named_target(self.turn_table, "station_1")
-
-        # robot_simon executes paint sequence
-        for i in range(1, 10):
-            self.move_named_target(self.robot_simon, f"paint_{i}")
-        self.move_named_target(self.robot_simon, "home")
+        if doSimon:
+            # robot_simon executes paint sequence
+            for i in range(1, 10):
+                self.move_named_target(self.robot_simon, f"paint_{i}")
+            self.move_named_target(self.robot_simon, "home")
 
         # Turntable to station_2
         self.move_named_target(self.turn_table, "station_2")
@@ -56,7 +58,7 @@ class MultiRobotDemo:
         self.move_named_target(self.robot_flo, "home")
 
         # Turntable to station_3
-        self.move_named_target(self.turn_table, "station_3")
+        self.move_named_target(self.turn_table, "home")
 
         rospy.loginfo("Process completed.")
 
