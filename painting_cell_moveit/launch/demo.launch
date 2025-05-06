@@ -46,6 +46,7 @@
   <include file="$(dirname)/move_group.launch">
     <arg name="allow_trajectory_execution" value="true"/>
     <arg name="moveit_controller_manager" value="$(arg moveit_controller_manager)" />
+    <param name="start_state_max_bounds_error" value="0.05"/>
     <arg name="fake_execution_type" value="$(arg fake_execution_type)"/>
     <arg name="info" value="true"/>
     <arg name="debug" value="$(arg debug)"/>

@@ -3,14 +3,11 @@
      Commit Version: 1.6.0-4-g7f85cfe  Build Version: 1.6.7995.38578
      For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
 <robot name="painting_cell">
-<!--
-    <link name="world">
-    </link>
+    <link name="world" />
     <joint name="fixed_link_to_world" type="fixed">
-        <parent link="world"/>
-        <child link="a_foundation"/>
+        <parent link="world" />
+        <child link="a_foundation" />
     </joint>
--->
     <!-- foundation link to enable inertial simulation with painting cell -->
     <link name="a_foundation" />
     <joint name="foundation" type="fixed">
@@ -68,9 +65,143 @@
         <parent link="painting_cell" />
         <child link="turn_table" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
+        <limit lower="-6.2833" upper="6.2833" effort="10" velocity="6.1832" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
+    <!-- sculptures to be painted -->
+    <link name="knight_1">
+        <inertial>
+            <origin xyz="-0.0551162952759755 0.00676718156921865 -0.0910390007355257" rpy="0 0 0" />
+            <mass value="0.809118720487137" />
+            <inertia ixx="0.00299738744056118" ixy="-2.75836416616075E-06" ixz="-0.000128130943527752" iyy="0.0031447821279842" iyz="-1.40569067585602E-05" izz="0.000748624181460382" />
+        </inertial>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/knight_1.STL" />
+            </geometry>
+            <material name="">
+                <color rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+            </material>
+        </visual>
+        <collision>
+            <origin xyz="0 0 0" rpy="0 0 0" />
+            <geometry>
+                <mesh filename="package://painting_cell/meshes/knight_1.STL" />
+            </geometry>
+        </collision>
+    </link>
+    <joint name="joint_knight_1" type="fixed">
+        <!-- xyz="-0.0065718 0.020717 0.58785" -->
+        <origin xyz="-0.0065718 0.025 0.58785" rpy="1.5708 1.5707 0" />
+        <parent link="turn_table" />
+        <child link="knight_1" />
+        <axis xyz="1 0 0" />
+        <limit lower="0" upper="0" effort="0" velocity="0" />
+    </joint>
+    <!--
+  <link name="knight_2">
+    <inertial>
+      <origin
+        xyz="-0.0100183236828254 -0.00676715663905564 0.0910388447416126"
+        rpy="0 0 0" />
+      <mass
+        value="0.809113158889413" />
+      <inertia
+        ixx="0.00299738283757101"
+        ixy="2.75924847003943E-06"
+        ixz="0.000128135115860762"
+        iyy="0.00314477557892801"
+        iyz="-1.40568435428535E-05"
+        izz="0.000748621705192225" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://painting_cell/meshes/knight_2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://painting_cell/meshes/knight_2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_knight_2" type="fixed">
+    <origin
+      xyz="0.55143 0.025 -0.31078"
+      rpy="1.5708 -0.52348 3.1416" />
+    <parent
+      link="turn_table" />
+    <child
+      link="knight_2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="knight_3">
+    <inertial>
+      <origin
+        xyz="-0.0100183102523381 -0.00676722399319424 0.0910391321788568"
+        rpy="0 0 0" />
+      <mass
+        value="0.809122251382701" />
+      <inertia
+        ixx="0.00299739273178344"
+        ixy="2.75833254293162E-06"
+        ixz="0.000128134576917548"
+        iyy="0.00314478454618605"
+        iyz="-1.40601591379402E-05"
+        izz="0.000748623497914981" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://painting_cell/meshes/knight_3.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://painting_cell/meshes/knight_3.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint name="joint_knight_3" type="fixed">
+    <origin
+      xyz="-0.54486 0.025 -0.32217"
+      rpy="-1.5708 -0.52372 0" />
+    <parent
+      link="turn_table" />
+    <child
+      link="knight_3" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  -->
     <!-- robot_simon -->
     <link name="base_link_simon">
         <inertial>
@@ -277,7 +408,7 @@
         <parent link="link_5_simon" />
         <child link="link_6_simon" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
+        <limit lower="-6.2832" upper="6.2832" effort="10" velocity="6.2832" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <!-- robot_florian -->
@@ -486,7 +617,7 @@
         <parent link="link_5_flo" />
         <child link="link_6_flo" />
         <axis xyz="0 0 1" />
-        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
+        <limit lower="-6.2832" upper="6.2832" effort="10" velocity="6.2832" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <!-- transmissions-->
@@ -632,3 +763,4 @@
         </plugin>
     </gazebo>
 </robot>
+

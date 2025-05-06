@@ -49,23 +49,140 @@
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="home" group="robot_flo">
-        <joint name="joint_1_flo" value="0"/>
+        <joint name="joint_1_flo" value="0.7854"/>
         <joint name="joint_2_flo" value="0"/>
         <joint name="joint_3_flo" value="0"/>
-        <joint name="joint_4_flo" value="0"/>
-        <joint name="joint_5_flo" value="0"/>
+        <joint name="joint_4_flo" value="-1.5708"/>
+        <joint name="joint_5_flo" value="-1.5708"/>
         <joint name="joint_6_flo" value="0"/>
     </group_state>
+    <group_state name="cure_1" group="robot_flo">
+        <joint name="joint_1_flo" value="-0.646"/>
+        <joint name="joint_2_flo" value="-0.436"/>
+        <joint name="joint_3_flo" value="0.436"/>
+        <joint name="joint_4_flo" value="-0.279"/>
+        <joint name="joint_5_flo" value="-1.868"/>
+        <joint name="joint_6_flo" value="0"/>
+    </group_state>
+    <group_state name="cure_2" group="robot_flo">
+        <joint name="joint_1_flo" value="0"/>
+        <joint name="joint_2_flo" value="-0.175"/>
+        <joint name="joint_3_flo" value="0.681"/>
+        <joint name="joint_4_flo" value="-0.838"/>
+        <joint name="joint_5_flo" value="-1.763"/>
+        <joint name="joint_6_flo" value="-0.611"/>
+    </group_state>
+    <group_state name="cure_3" group="robot_flo">
+        <joint name="joint_1_flo" value="0.8552"/>
+        <joint name="joint_2_flo" value="-0.576"/>
+        <joint name="joint_3_flo" value="0.646"/>
+        <joint name="joint_4_flo" value="-1.763"/>
+        <joint name="joint_5_flo" value="-2.199"/>
+        <joint name="joint_6_flo" value="-1.134"/>
+    </group_state>
+    <group_state name="cure_4" group="robot_flo">
+        <joint name="joint_1_flo" value="0.977"/>
+        <joint name="joint_2_flo" value="-1.03"/>
+        <joint name="joint_3_flo" value="0.14"/>
+        <joint name="joint_4_flo" value="-1.815"/>
+        <joint name="joint_5_flo" value="-2.042"/>
+        <joint name="joint_6_flo" value="-1.361"/>
+    </group_state>
+    <!-- robot_simon -->
     <group_state name="home" group="robot_simon">
-        <joint name="joint_1_simon" value="0"/>
-        <joint name="joint_2_simon" value="0"/>
-        <joint name="joint_3_simon" value="0"/>
-        <joint name="joint_4_simon" value="0"/>
-        <joint name="joint_5_simon" value="0"/>
-        <joint name="joint_6_simon" value="0"/>
+        <joint name="joint_1_simon" value="-0.995"/>
+        <joint name="joint_2_simon" value="-0.576"/>
+        <joint name="joint_3_simon" value="0.803"/>
+        <joint name="joint_4_simon" value="0.227"/>
+        <joint name="joint_5_simon" value="-0.489"/>
+        <joint name="joint_6_simon" value="0.995"/>
+    </group_state>
+    <!-- Pose 1 -->
+    <group_state name="paint_1" group="robot_simon">
+        <joint name="joint_1_simon" value="-1.239"/>
+        <joint name="joint_2_simon" value="-0.768"/>
+        <joint name="joint_3_simon" value="0.2443"/>
+        <joint name="joint_4_simon" value="1.0647"/>
+        <joint name="joint_5_simon" value="0.5934"/>
+        <joint name="joint_6_simon" value="1.2915"/>
+    </group_state>
+    <group_state name="paint_2" group="robot_simon">
+        <joint name="joint_1_simon" value="-1.239"/>
+        <joint name="joint_2_simon" value="-0.768"/>
+        <joint name="joint_3_simon" value="0.2443"/>
+        <joint name="joint_4_simon" value="1.0647"/>
+        <joint name="joint_5_simon" value="0.5934"/>
+        <joint name="joint_6_simon" value="0.5061"/>
+    </group_state>
+    <group_state name="paint_3" group="robot_simon">
+        <joint name="joint_1_simon" value="-1.239"/>
+        <joint name="joint_2_simon" value="-0.768"/>
+        <joint name="joint_3_simon" value="0.2443"/>
+        <joint name="joint_4_simon" value="1.0647"/>
+        <joint name="joint_5_simon" value="0.5934"/>
+        <joint name="joint_6_simon" value="2.0769"/>
+    </group_state>
+    <!-- Pose 2 -->
+    <group_state name="paint_4" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.436"/>
+        <joint name="joint_2_simon" value="-0.942"/>
+        <joint name="joint_3_simon" value="0.2094"/>
+        <joint name="joint_4_simon" value="-0.035"/>
+        <joint name="joint_5_simon" value="-0.279"/>
+        <joint name="joint_6_simon" value="2.2515"/>
+    </group_state>
+    <group_state name="paint_5" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.436"/>
+        <joint name="joint_2_simon" value="-0.942"/>
+        <joint name="joint_3_simon" value="0.2094"/>
+        <joint name="joint_4_simon" value="-0.035"/>
+        <joint name="joint_5_simon" value="-0.279"/>
+        <joint name="joint_6_simon" value="1.4661"/>
+    </group_state>
+    <group_state name="paint_6" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.436"/>
+        <joint name="joint_2_simon" value="-0.942"/>
+        <joint name="joint_3_simon" value="0.2094"/>
+        <joint name="joint_4_simon" value="-0.035"/>
+        <joint name="joint_5_simon" value="-0.279"/>
+        <joint name="joint_6_simon" value="3.0369"/>
+    </group_state>
+    <!-- Pose 3 -->
+    <group_state name="paint_7" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.035"/>
+        <joint name="joint_2_simon" value="-1.466"/>
+        <joint name="joint_3_simon" value="1.0297"/>
+        <joint name="joint_4_simon" value="-0.209"/>
+        <joint name="joint_5_simon" value="-1.361"/>
+        <joint name="joint_6_simon" value="2.6704"/>
+    </group_state>
+    <group_state name="paint_8" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.035"/>
+        <joint name="joint_2_simon" value="-1.466"/>
+        <joint name="joint_3_simon" value="1.0297"/>
+        <joint name="joint_4_simon" value="-0.209"/>
+        <joint name="joint_5_simon" value="-1.361"/>
+        <joint name="joint_6_simon" value="1.8850"/>
+    </group_state>
+    <group_state name="paint_9" group="robot_simon">
+        <joint name="joint_1_simon" value="-0.035"/>
+        <joint name="joint_2_simon" value="-1.466"/>
+        <joint name="joint_3_simon" value="1.0297"/>
+        <joint name="joint_4_simon" value="-0.209"/>
+        <joint name="joint_5_simon" value="-1.361"/>
+        <joint name="joint_6_simon" value="3.4558"/>
     </group_state>
     <group_state name="home" group="turn_table">
         <joint name="joint_turn_table" value="0"/>
+    </group_state>
+    <group_state name="station_1" group="turn_table">
+        <joint name="joint_turn_table" value="2.0944"/>
+    </group_state>
+    <group_state name="station_2" group="turn_table">
+        <joint name="joint_turn_table" value="4.1888"/>
+    </group_state>
+    <group_state name="station_3" group="turn_table">
+        <joint name="joint_turn_table" value="6.1832"/>
     </group_state>
     <!--VIRTUAL JOINT: Purpose: this element defines a virtual joint between a robot link and an external frame of reference (considered fixed with respect to the robot)-->
     <virtual_joint name="fixed_link_to_world" type="fixed" parent_frame="world" child_link="a_foundation"/>
