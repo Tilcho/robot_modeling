@@ -1,4 +1,79 @@
-to start the python ready windows: roslaunch painting_cell_moveit demo_gazebo.launch
+
+# Painting Cell
+
+This project simulates and controls a robotic painting cell using ROS and MoveIt. It includes a complete setup for URDF modeling, Gazebo simulation, motion planning via MoveIt, and custom Python scripts for demonstration tasks.
+
+## Repository Structure
+
+```
+painting_cell/
+├── config/                     # YAML configuration files (e.g. joint names)
+├── launch/                     # Launch files for RViz and Gazebo
+├── meshes/                     # 3D STL models of robot links and environment
+├── urdf/                       # URDF file defining the painting cell
+├── CMakeLists.txt
+└── package.xml
+
+painting_cell_moveit/
+├── config/                     # MoveIt motion planning configs (OMPL, CHOMP, etc.)
+├── launch/                     # Launch files for MoveIt and controllers
+├── scripts/                    # Python scripts for motion and simulation control
+├── paint.sh                    # Script for automated painting task
+├── CMakeLists.txt
+└── package.xml
+```
+
+## Getting Started
+
+### Dependencies
+
+- ROS (e.g., Noetic)
+- MoveIt
+- Gazebo (for simulation)
+- Python 3 (for scripts)
+
+### Building the Packages
+
+```bash
+cd ~/catkin_ws/src
+git clone <this-repo>
+cd ..
+catkin_make
+source devel/setup.bash
+```
+
+### Launching the Simulation
+
+To launch the robot in RViz:
+
+```bash
+roslaunch painting_cell display.launch
+```
+
+To run the Gazebo simulation:
+
+```bash
+roslaunch painting_cell gazebo.launch
+```
+
+To start the MoveIt planning scene:
+
+```bash
+roslaunch painting_cell_moveit demo.launch
+```
+
+To start the MoveIt and Gazebo planning scene:
+
+```bash
+roslaunch painting_cell_moveit demo_gazebo.launch
+```
+
+To start MoveIt, Gazebo and HMI:
+
+```bash
+cd ~/catkin_ws/src/robot_modeling/painting_cell_moveit
+./paint.sh
+```
 
 If you get 
 [INFO] [1746612760.213842695]: Loading robot model 'painting_cell'...
@@ -10,3 +85,31 @@ Traceback (most recent call last):
 RuntimeError: Unable to connect to move_group action server 'move_group' within allotted time (5s)
 
 run *./hmi_bridge.py* after moveit has loaded fully 
+
+
+## Usage
+
+### Painting Task
+
+The `paint.py` script in `scripts/` automates a robotic painting motion. It requires the simulation and MoveIt to be running.
+
+```bash
+rosrun painting_cell_moveit paint.py
+```
+
+### Other Scripts
+
+- `multimove.py`: Demonstrates coordinated robot movement
+- `swivel.py`: Simple motion demo
+- `set_physics.py`: Adjusts Gazebo physics parameters - doesnt work propperly
+
+## Development Notes
+
+- The URDF model is located in `painting_cell/urdf/painting_cell.urdf`.
+- Meshes are provided for both visualization and collision.
+- Joint limits, kinematics, and planning parameters are configurable in YAML files.
+- Uses various planning pipelines: OMPL, CHOMP, STOMP, and PILZ.
+
+## License
+
+MIT License. See LICENSE file for details.
