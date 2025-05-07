@@ -21,11 +21,11 @@ class MultiRobotDemo:
             group.set_max_velocity_scaling_factor(1.0)
             group.set_goal_tolerance(0.001)
 
-    def move_named_target(self, group, target_name):
+    def move_named_target(self, group, target_name, wait_for_it):
         rospy.loginfo(f"Moving {group.get_name()} to {target_name}")
         group.set_start_state_to_current_state()
         group.set_named_target(target_name)
-        success = group.go(wait=True)
+        success = group.go(wait=wait_for_it)
         group.stop()
         group.clear_pose_targets()
         rospy.sleep(1.0)
@@ -36,29 +36,28 @@ class MultiRobotDemo:
     def run_sequence(self):
         doSimon = True
         # All robots to home position before any operation
-        self.move_named_target(self.turn_table, "home")
-        if doSimon:
-            self.move_named_target(self.robot_simon, "home")
-        self.move_named_target(self.robot_flo, "home")
+        self.move_named_target(self.turn_table, "home", False)
+        self.move_named_target(self.robot_simon, "home", False)
+        self.move_named_target(self.robot_flo, "home", False)
 
         # Turntable to station_1
-        self.move_named_target(self.turn_table, "station_1")
-        if doSimon:
-            # robot_simon executes paint sequence
-            for i in range(1, 10):
-                self.move_named_target(self.robot_simon, f"paint_{i}")
-            self.move_named_target(self.robot_simon, "home")
+        self.move_named_target(self.turn_table, "station_1", True)
+
+        # robot_simon executes paint sequence
+        for i in range(1, 10):
+            self.move_named_target(self.robot_simon, f"paint_{i}", True)
+        self.move_named_target(self.robot_simon, "home", True)
 
         # Turntable to station_2
-        self.move_named_target(self.turn_table, "station_2")
+        self.move_named_target(self.turn_table, "station_2", True)
 
         # robot_flo executes cure sequence
         for i in range(1, 5):
-            self.move_named_target(self.robot_flo, f"cure_{i}")
-        self.move_named_target(self.robot_flo, "home")
+            self.move_named_target(self.robot_flo, f"cure_{i}", True)
+        self.move_named_target(self.robot_flo, "home", True)
 
         # Turntable to station_3
-        self.move_named_target(self.turn_table, "home")
+        self.move_named_target(self.turn_table, "home", False)
 
         rospy.loginfo("Process completed.")
 

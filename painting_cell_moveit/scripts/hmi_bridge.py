@@ -50,8 +50,14 @@ def handle_joystick_command(msg):
             group.set_start_state_to_current_state()
             group.set_pose_target(pose)
 
-            plan = group.plan()
-            success = group.execute(plan, wait=True)
+#            plan = group.plan()
+#            success = group.execute(plan, wait=True)
+            success, plan, _, _ = group.plan()
+            if success:
+                group.execute(plan, wait=True)
+            else:
+                rospy.logwarn("Planung fehlgeschlagen.")
+                
             group.stop()
             group.clear_pose_targets()
 

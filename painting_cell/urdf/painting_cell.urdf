@@ -65,7 +65,7 @@
         <parent link="painting_cell" />
         <child link="turn_table" />
         <axis xyz="0 1 0" />
-        <limit effort="10000" velocity="6.1832" />
+        <limit effort="10" velocity="6.1832" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <!-- sculptures to be painted -->
@@ -467,7 +467,7 @@
         <parent link="base_link_flo" />
         <child link="link_1_flo" />
         <axis xyz="0 0.93012 0.36725" />
-        <limit lower="-3.1416" upper="3.1416" effort="10000" velocity="3.1416" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_2_flo">
@@ -497,7 +497,7 @@
         <parent link="link_1_flo" />
         <child link="link_2_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="10000" velocity="3.1416" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_3_flo">
@@ -527,7 +527,7 @@
         <parent link="link_2_flo" />
         <child link="link_3_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="10000" velocity="3.1416" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="3.1416" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_4_flo">
@@ -557,7 +557,7 @@
         <parent link="link_3_flo" />
         <child link="link_4_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="10000" velocity="6.2832" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_5_flo">
@@ -587,7 +587,7 @@
         <parent link="link_4_flo" />
         <child link="link_5_flo" />
         <axis xyz="0 1 0" />
-        <limit lower="-3.1416" upper="3.1416" effort="10000" velocity="6.2832" />
+        <limit lower="-3.1416" upper="3.1416" effort="10" velocity="6.2832" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <link name="link_6_flo">
@@ -617,7 +617,7 @@
         <parent link="link_5_flo" />
         <child link="link_6_flo" />
         <axis xyz="0 0 1" />
-        <limit lower="-6.2832" upper="6.2832" effort="10000" velocity="6.2832" />
+        <limit lower="-6.2832" upper="6.2832" effort="10" velocity="6.2832" />
         <dynamics damping="0.5" friction="0.5" />
     </joint>
     <!-- transmissions-->

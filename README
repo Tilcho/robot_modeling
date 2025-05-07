@@ -1,2 +1,12 @@
-no steps required atm...
-to start the python ready ros windows: roslaunch painting_cell_moveit demo_gazebo.launch
+to start the python ready windows: roslaunch painting_cell_moveit demo_gazebo.launch
+
+If you get 
+[INFO] [1746612760.213842695]: Loading robot model 'painting_cell'...
+Traceback (most recent call last):
+  File "./hmi_bridge.py", line 79, in <module>
+    "lackierer": MoveGroupCommander("robot_simon"),
+  File "/opt/ros/noetic/lib/python3/dist-packages/moveit_commander/move_group.py", line 66, in __init__
+    self._g = _moveit_move_group_interface.MoveGroupInterface(
+RuntimeError: Unable to connect to move_group action server 'move_group' within allotted time (5s)
+
+run *./hmi_bridge.py* after moveit has loaded fully 
