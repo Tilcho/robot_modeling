@@ -327,6 +327,20 @@
            </property>
           </widget>
          </item>
+         <item row="2" column="0">
+          <widget class="QPushButton" name="tcpXDown">
+           <property name="text">
+            <string>X ↓</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="tcpXUp">
+           <property name="text">
+            <string>X ↑</string>
+           </property>
+          </widget>
+         </item>
         </layout>
        </item>
       </layout>

@@ -33,6 +33,8 @@ class TouchHMI(QtWidgets.QWidget):
         self.tcpZDown = self.findChild(QtWidgets.QPushButton, "tcpZDown")
         self.tcpYLeft = self.findChild(QtWidgets.QPushButton, "tcpYLeft")
         self.tcpYRight = self.findChild(QtWidgets.QPushButton, "tcpYRight")
+        self.tcpXUp = self.findChild(QtWidgets.QPushButton, "tcpXUp")
+        self.tcpXDown = self.findChild(QtWidgets.QPushButton, "tcpXDown")
 
         self.jointSelector = self.findChild(QtWidgets.QComboBox, "jointSelector")
         self.jointRobotSelector = self.findChild(QtWidgets.QComboBox, "jointRobotSelector")
@@ -52,6 +54,8 @@ class TouchHMI(QtWidgets.QWidget):
         self.tcpZDown.clicked.connect(lambda: self.send_joystick_command("z", "down"))
         self.tcpYLeft.clicked.connect(lambda: self.send_joystick_command("y", "down"))
         self.tcpYRight.clicked.connect(lambda: self.send_joystick_command("y", "up"))
+        self.tcpXUp.clicked.connect(lambda: self.send_joystick_command("x", "up"))
+        self.tcpXDown.clicked.connect(lambda: self.send_joystick_command("x", "down"))
 
         # Modus-Buttons
         self.autoModeButton.clicked.connect(self.set_automatic_mode)
@@ -71,20 +75,31 @@ class TouchHMI(QtWidgets.QWidget):
             self.reset_to_start_mode()
 
     def send_joystick_command(self, axis_or_joint, direction):
-        robot_idx = self.jointRobotSelector.currentIndex()
-        robot_map = {0: "lackierer", 1: "uv"}
-        robot_name = robot_map.get(robot_idx, "lackierer")
-
+    # Erkennen, welcher Tab ausgewählt ist
         tab_index = self.mainTabWidget.currentIndex()
+    
+    # Robotername dynamisch wählen basierend auf dem aktuellen Tab
         if tab_index == self.mainTabWidget.indexOf(self.jointTab):
+            robot_idx = self.jointRobotSelector.currentIndex()
+            robot_map = {0: "lackierer", 1: "uv"}
+            robot_name = robot_map.get(robot_idx, "lackierer")
+        
             joint_idx = self.jointSelector.currentIndex()
             joint_name = f"joint_{joint_idx + 1}"
             cmd = f"{robot_name}:joint:{joint_name}:{direction}"
+    
         elif tab_index == self.mainTabWidget.indexOf(self.tcpTab):
+            robot_idx = self.tcpRobotSelector.currentIndex()
+            robot_map = {0: "lackierer", 1: "uv"}
+            robot_name = robot_map.get(robot_idx, "lackierer")
+        
             axis = axis_or_joint  # "x", "y", "z"
             cmd = f"{robot_name}:tcp:{axis}:{direction}"
         else:
             return
+
+    # Befehl senden
+
 
         self.joystick_pub.publish(String(data=cmd))
         print(f"[Joystick] → {cmd}")
@@ -111,7 +126,7 @@ class TouchHMI(QtWidgets.QWidget):
         self.mainTabWidget.setTabEnabled(index_tcp, False)
 
         for btn in [self.joystickUp, self.joystickDown, self.joystickLeft, self.joystickRight,
-                    self.tcpZUp, self.tcpZDown, self.tcpYLeft, self.tcpYRight]:
+                    self.tcpZUp, self.tcpZDown, self.tcpYLeft, self.tcpYRight, self.tcpXUp, self.tcpXDown]:
             btn.setEnabled(False)
 
         self.autoModeButton.setEnabled(False)
@@ -130,7 +145,7 @@ class TouchHMI(QtWidgets.QWidget):
         self.mainTabWidget.setTabEnabled(index_tcp, True)
 
         for btn in [self.joystickUp, self.joystickDown, self.joystickLeft, self.joystickRight,
-                    self.tcpZUp, self.tcpZDown, self.tcpYLeft, self.tcpYRight]:
+                    self.tcpZUp, self.tcpZDown, self.tcpYLeft, self.tcpYRight, self.tcpXUp, self.tcpXDown]:
             btn.setEnabled(True)
 
         self.autoModeButton.setEnabled(True)
@@ -153,7 +168,7 @@ class TouchHMI(QtWidgets.QWidget):
         self.mainTabWidget.setTabEnabled(index_tcp, True)
 
         for btn in [self.joystickUp, self.joystickDown, self.joystickLeft, self.joystickRight,
-                    self.tcpZUp, self.tcpZDown, self.tcpYLeft, self.tcpYRight]:
+                    self.tcpZUp, self.tcpZDown, self.tcpYLeft, self.tcpYRight, self.tcpXUp, self.tcpXDown]:
             btn.setEnabled(True)
 
         self.autoModeButton.setEnabled(True)
@@ -163,6 +178,16 @@ class TouchHMI(QtWidgets.QWidget):
     def trigger_emergency(self):
         self.displayText.setText("⚠️ NOT-AUS aktiviert!")
         print("NOT-AUS gedrückt")
+        self.autoModeButton.setEnabled(False)
+        self.manualModeButton.setEnabled(False)
+        for proc in psutil.process_iter(attrs=['pid', 'name', 'cmdline']):
+            try:
+                if "paint.py" in proc.info['cmdline']:
+                    proc.terminate()
+                    print("paint.py gestoppt")
+            except (psutil.NoSuchProcess, psutil.AccessDenied, psutil.ZombieProcess):
+                continue
+
 
         self.acknowledgeButton.setEnabled(True)
         self.blinkTimer.start(500)
