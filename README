@@ -6,6 +6,19 @@ This project simulates and controls a robotic painting cell using ROS and MoveIt
 ## Repository Structure
 
 ```
+misc/
+├── Knight.STL                 # Extra 3D model
+├── Spiral Chess Set.zip       # Additional STL assets
+├── frames.pdf, poses.ods      # Reference documentation for frames and poses
+├── gazebo_painting_cell.urdf  # Variant URDF for Gazebo
+├── ZwischenPräsentation_*.pptx# Project presentation
+├── urdf_robot_flo/            # Complete alternate URDF setup for 'flo' robot
+│   ├── config/, launch/, urdf/, meshes/
+│   └── CMakeLists.txt, package.xml
+└── urdf_robot_simon/          # Complete alternate URDF setup for 'simon' robot
+    ├── config/, launch/, urdf/, meshes/
+    └── CMakeLists.txt, package.xml
+
 painting_cell/
 ├── config/                     # YAML configuration files (e.g. joint names)
 ├── launch/                     # Launch files for RViz and Gazebo
@@ -21,6 +34,7 @@ painting_cell_moveit/
 ├── paint.sh                    # Script for automated painting task
 ├── CMakeLists.txt
 └── package.xml
+
 ```
 
 ## Getting Started
