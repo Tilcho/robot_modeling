@@ -50,7 +50,7 @@ painting_cell_moveit/
 
 ```bash
 cd ~/catkin_ws/src
-git clone <this-repo>
+git clone robot_modeling
 cd ..
 catkin_make
 source devel/setup.bash
