@@ -2,6 +2,9 @@
 # Painting Cell
 
 This project simulates and controls a robotic painting cell using ROS and MoveIt. It includes a complete setup for URDF modeling, Gazebo simulation, motion planning via MoveIt, and custom Python scripts for demonstration tasks.
+It uses two robots and a turning table.
+robot_simon is for painting
+robot_flo is the UV curing robot
 
 ## Repository Structure
 
